@@ -1,18 +1,23 @@
 pipeline {
     agent {
-        label "newNode"
+        "newNode"
     }
 
     stages {
         stage('Build') {
             steps {
-                echo "202206071448"
+                echo 'Building..'
             }
         }
-    }
-    post {
-        always {
-           echo 'pipeline 0 done!!!'
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
         }
     }
 }
